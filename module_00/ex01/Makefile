@@ -6,13 +6,13 @@
 #    By: milmi <milmi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/10 00:43:14 by milmi             #+#    #+#              #
-#    Updated: 2021/12/17 10:25:00 by milmi            ###   ########.fr        #
+#    Updated: 2021/12/17 12:09:42 by milmi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = my_awesome_phonebook
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 CP = clang++
 
