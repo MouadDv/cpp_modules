@@ -6,11 +6,11 @@
 #    By: milmi <milmi@student.1337.ma>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/10 00:43:14 by milmi             #+#    #+#              #
-#    Updated: 2021/12/21 15:54:20 by milmi            ###   ########.fr        #
+#    Updated: 2021/12/21 16:30:28 by milmi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Zombie
+NAME = violence
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
