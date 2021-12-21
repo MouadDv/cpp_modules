@@ -1,20 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: milmi <milmi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 09:43:06 by milmi             #+#    #+#             */
-/*   Updated: 2021/12/21 09:43:08 by milmi            ###   ########.fr       */
+/*   Created: 2021/12/21 09:34:14 by milmi             #+#    #+#             */
+/*   Updated: 2021/12/21 10:51:18 by milmi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void	randomChump( std::string name )
+Zombie::Zombie( void )
 {
-	Zombie stack(name);
-	
-	stack.announce();
+}
+
+Zombie::Zombie(std::string	_name)
+{
+	this->name = _name;
+}
+
+void	Zombie::setName(std::string _Name)
+{
+	this->name = _Name;
+}
+
+void	Zombie::announce( void )
+{
+	std::cout << this->name << "  BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+Zombie::~Zombie()
+{
+	std::cout << this->name << "  destructed successfully!" << std::endl;
 }
