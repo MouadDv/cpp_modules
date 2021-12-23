@@ -6,7 +6,7 @@
 /*   By: milmi <milmi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 06:28:38 by milmi             #+#    #+#             */
-/*   Updated: 2021/12/23 18:39:19 by milmi            ###   ########.fr       */
+/*   Updated: 2021/12/23 18:59:37 by milmi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ void Karen::error( void )
 
 void Karen::complain( std::string level )
 {
+	std::string comp[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	size_t	pos = 0;
+	int		found = 0;
 	std::map<std::string,void (Karen::*) (void)> mymap;
   	std::map<std::string,void (Karen::*) (void)>::iterator it;
 	  
@@ -42,7 +45,17 @@ void Karen::complain( std::string level )
 	mymap["WARNING"] = &Karen::warning;
 	mymap["ERROR"] = &Karen::error;
 	
-	it = mymap.find(level);
-	if (it != mymap.end())
-		(this->*(it->second))();
+	while (pos < 4)
+	{
+		if (comp[pos] == level || found == 1)
+		{
+			found = 1;
+			it = mymap.find(comp[pos]);
+			if (it != mymap.end())
+				(this->*(it->second))();
+		}
+		pos++;
+	}
+	if (!found)
+		std::cout << "[ Probably complaining about insignificant problems ]\n";
 }

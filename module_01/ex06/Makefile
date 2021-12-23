@@ -6,11 +6,11 @@
 #    By: milmi <milmi@student.1337.ma>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/10 00:43:14 by milmi             #+#    #+#              #
-#    Updated: 2021/12/23 18:10:06 by milmi            ###   ########.fr        #
+#    Updated: 2021/12/23 18:12:41 by milmi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = karen
+NAME = karenFilter
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
