@@ -142,4 +142,33 @@ Fixed Fixed::operator--(int)
   return (tmp);
 }
 
+Fixed &Fixed::min(Fixed &l, Fixed &r)
+{
+  if (l > r)
+    return (r);
+  return (l);
+}
+
+const Fixed &Fixed::min(const Fixed &l, const Fixed &r)
+{
+  if (l.toFloat() > r.toFloat())
+    return (r);
+  return (l);
+}
+
+Fixed &Fixed::max(Fixed &l, Fixed &r)
+{
+  if (l < r)
+    return (r);
+  return (l);
+}
+
+const Fixed &Fixed::max(const Fixed &l, const Fixed &r)
+{
+  if (l.toFloat() < r.toFloat())
+    return (r);
+  return (l);
+}
+
+
 const int Fixed::fb = 8;

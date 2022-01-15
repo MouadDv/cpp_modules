@@ -34,6 +34,10 @@ public:
   Fixed &operator--();
   Fixed operator++(int);
   Fixed operator--(int);
+  static Fixed &min(Fixed &l, Fixed &r);
+  static const Fixed &min(const Fixed &l, const Fixed &r);
+  static Fixed &max(Fixed &l, Fixed &r);
+  static const Fixed &max(const Fixed &l, const Fixed &r);
   ~Fixed();
 };
 
