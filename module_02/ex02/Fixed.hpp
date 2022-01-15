@@ -26,6 +26,14 @@ public:
   bool operator>=(const Fixed &s);
   bool operator>(const Fixed &s);
   bool operator<(const Fixed &s);
+  Fixed operator+(const Fixed &s);
+  Fixed operator-(const Fixed &s);
+  Fixed operator*(const Fixed &s);
+  Fixed operator/(const Fixed &s);
+  Fixed &operator++();
+  Fixed &operator--();
+  Fixed operator++(int);
+  Fixed operator--(int);
   ~Fixed();
 };
 
