@@ -1,35 +1,29 @@
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#pragma once
+#ifndef CLAPTRAP_CLASS
+#define CLAPTRAP_CLASS
 
+#include <string>
 #include <iostream>
-
-class ClapTrap
-{
-    private:
-        std::string Name;
-        int Hitpoints;
-        int Energy_points;
-        int Attack_damage;
-    public:
-        void attack(std::string const &target);
-        void takeDamage(unsigned int amount);
-        void beRepaired(unsigned int amount);
-
-        std::string get_name( void );
-        int get_hitpoint( void );
-        int get_energy_point( void );
-        int get_Attack_damage( void );
-
-        void set_name(std::string Name);
-        void set_hp(int hp);
-        void set_energy_point(int en_p);
-        void set_attack_damage(int  attak_damge);
-
-        ClapTrap(std::string Name);
-        ClapTrap( void );
-        ClapTrap(const ClapTrap& oldj);
-        void operator=(const ClapTrap& obj);
-        ~ClapTrap( void );
+class ClapTrap {
+private:
+  std::string Name;
+  int hp;
+  int ep;
+  int ad;
+public:
+  ClapTrap(std::string N);
+  ClapTrap(const ClapTrap &c);
+  ClapTrap();
+  ClapTrap& operator=(const ClapTrap &c);
+  void attack(std::string const & target);
+  void takeDamage(unsigned int amount);
+  void beRepaired(unsigned int amount);
+  ~ClapTrap();
+  // Geters
+  std::string getName();
+  int getHp();
+  int getEp();
+  int getAd();
 };
 
 
