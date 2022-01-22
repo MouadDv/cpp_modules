@@ -3,6 +3,9 @@
 ScavTrap::ScavTrap()
 {
   std::cout << "ScavTrap default constructor called!\n";
+  this->hp = 100;
+  this->ep = 50;
+  this->ad = 20;
 }
 ScavTrap::ScavTrap(std::string Name)
 {
@@ -29,6 +32,11 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &c)
   this->ad = c.ad;
 
   return (*this);
+}
+
+void ScavTrap::attack(std::string const & target)
+{
+  std::cout << "ScavTrap " << this->Name << " attacked " << target << " causing " << this->ad << " damage\n";
 }
 
 void ScavTrap::guardGate( void )
