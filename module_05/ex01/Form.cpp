@@ -1,16 +1,16 @@
 #include "Form.hpp"
 
-Form::Form(): Signed(0), Grade_to_sign(0), Grade_to_exec(0)
+Form::Form(): Name("noneF") ,Signed(false), Grade_to_sign(1), Grade_to_exec(1)
 {
   std::cout << "Form default constructor called!\n";
 }
 
-Form::Form(std::string n, int gs, int ge): Name(n), Signed(0), Grade_to_sign(gs), Grade_to_exec(ge)
+Form::Form(std::string n, int gs, int ge): Name(n), Signed(false), Grade_to_sign(gs), Grade_to_exec(ge)
 {
   std::cout << "Form constructor called with values " << n << " and " << gs << " and " << ge << "\n";
 }
 
-Form::Form(const Form &c): Name(c.Name), Signed(c.Signed), Grade_to_sign(c.Grade_to_sign), Grade_to_exec(c.Grade_to_exec)
+Form::Form(const Form &c): Name(c.Name), Signed(false), Grade_to_sign(c.Grade_to_sign), Grade_to_exec(c.Grade_to_exec)
 {
   std::cout << "Form copy constructor called!\n";
 }
@@ -64,21 +64,17 @@ const char * Form::GradeTooLowException::what () const throw ()
 
 void Form::beSigned(Bureaucrat &s)
 {
-  if (s.getGrade() < 1)
-    throw Form::GradeTooLowException();
-  else if (s.getGrade() > 155)
-    throw Form::GradeTooHighException();
+  if (s.getGrade() < this->Grade_to_sign)
+    this->Signed = true;
   else
-    {
-      this->Signed = true;
-    }
+    throw Form::GradeTooLowException();
 }
 
 std::ostream & operator<<(std::ostream & o, Form const & rhs)
 {
 	if (rhs.getSigned() == true)
-		o << "Form " << rhs.getName() << " is successfully signed !!";
+		o << "Form " << rhs.getName() << " is successfully signed !!\n";
 	else
-		o << "Form " << rhs.getName() << " is not signed !!";
+		o << "Form " << rhs.getName() << " is not signed !!\n";
 	return (o);
 }

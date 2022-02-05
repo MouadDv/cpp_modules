@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat(): Name("noneB")
 {
   std::cout << "Bureaucrat default constructor called!\n";
 }
@@ -74,6 +74,7 @@ void Bureaucrat::signForm(Form &c)
 {
   try {
     c.beSigned(*this);
+    std::cout << this->getName() << " succesfuly signed!\n";
   }
   catch (std::exception &e) {
     std::cout << this->getName() << " couldn't sign " << c.getName() << " because " << e.what() << "\n";
