@@ -1,11 +1,11 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm( void )
+PresidentialPardonForm::PresidentialPardonForm( void ): Form("RandomPresidentialName", 145, 137)
 {
   std::cout << "PresidentialPardonForm default constructor called!\n";
 }
 
-PresidentialPardonForm::PresidentialPardonForm( std::string target )
+PresidentialPardonForm::PresidentialPardonForm( std::string target ):  Form("Presidential", 72, 45)
 {
   std::cout << "PresidentialPardonForm constructor called with target = " << target << "\n";
   this->setTarget(target);
@@ -14,6 +14,7 @@ PresidentialPardonForm::PresidentialPardonForm( std::string target )
 PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm &c ): Form(c.getName(), c.getGradetosign(), c.getGradetoexec())
 {
   std::cout << "PresidentialPardonForm copy constructor called!\n";
+  this->setTarget(c.getTarget());
 }
 
 PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPardonForm &c)
@@ -32,7 +33,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
   if (this->getSigned() == true && this->getGradetoexec() > executor.getGrade())
-    std::cout << ">" << this->getTarget() << ">" << " as been pardoned by Zafod Beeblebrox" << std::endl;
+    std::cout << ">" << this->getTarget() << ">" << " has been pardoned by Zafod Beeblebrox" << std::endl;
   else
     throw Form::GradeTooLowException();
 }

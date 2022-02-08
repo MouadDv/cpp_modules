@@ -10,15 +10,15 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrats
+NAME = Forms
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 CP = clang++
 
-SRC = Bureaucrat.cpp Form.cpp main.cpp
+SRC = Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp main.cpp
 
-HEADER = Bureaucrat.hpp Form.hpp
+HEADER = Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
 
 all: $(NAME)
 
