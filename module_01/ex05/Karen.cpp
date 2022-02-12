@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Karen.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: milmi <milmi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: milmi <milmi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 06:28:38 by milmi             #+#    #+#             */
-/*   Updated: 2021/12/23 18:39:19 by milmi            ###   ########.fr       */
+/*   Updated: 2022/02/09 14:25:55 by milmi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,38 @@ void Karen::error( void )
 
 void Karen::complain( std::string level )
 {
-	std::map<std::string,void (Karen::*) (void)> mymap;
-  	std::map<std::string,void (Karen::*) (void)>::iterator it;
-	  
-	mymap["DEBUG"] = &Karen::debug;
-	mymap["INFO"] = &Karen::info;
-	mymap["WARNING"] = &Karen::warning;
-	mymap["ERROR"] = &Karen::error;
+	std::string tab[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void	(Karen::*ptr[4])(void);
+	int			pos = 0;
 	
-	it = mymap.find(level);
-	if (it != mymap.end())
-		(this->*(it->second))();
+	ptr[0] = &Karen::debug;
+	ptr[1] = &Karen::info;
+	ptr[2] = &Karen::warning;
+	ptr[3] = &Karen::error;
+	
+	while (pos < 4)
+	{
+		if (level == tab[pos])
+			break ;
+		pos++;
+	}
+	
+	switch (pos)
+	{
+		case 0:
+			(this->*(ptr[0]))();
+			break;
+		case 1:
+			(this->*(ptr[1]))();
+			break;
+		case 2:
+			(this->*(ptr[2]))();
+			break;
+		case 3:
+			(this->*(ptr[3]))();
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]\n";
+			break;
+	}
 }

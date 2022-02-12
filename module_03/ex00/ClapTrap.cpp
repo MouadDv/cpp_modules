@@ -20,12 +20,12 @@ ClapTrap::ClapTrap(const ClapTrap &c)
 }
 ClapTrap::ClapTrap()
 {
-  std::cout << "Default constractor called!\n";
+  std::cout << "ClapTrap default constractor called!\n";
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &c)
 {
-  std::cout << "assignation operator overload called!\n";
+  std::cout << "ClapTrap assignation operator overload called!\n";
   this->Name = c.Name;
   this->hp = c.hp;
   this->ep = c.ep;
@@ -50,5 +50,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::~ClapTrap()
 {
-  std::cout << "Destractor called!\n";
+  std::cout << "ClapTrap destractor called!\n";
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: milmi <milmi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: milmi <milmi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 06:28:36 by milmi             #+#    #+#             */
-/*   Updated: 2021/12/23 17:54:26 by milmi            ###   ########.fr       */
+/*   Updated: 2022/02/09 12:42:21 by milmi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,14 @@
 
 #include <string>
 #include <iostream>
-#include <map>
 
 class Karen
 {
 private:
+	void error( void );
 	void debug( void );
 	void info( void );
 	void warning( void );
-	void error( void );
 public:
 	void complain( std::string level );
 };

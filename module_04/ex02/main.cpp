@@ -3,16 +3,15 @@
 
 int main()
 {
-  Animal *j = new Cat;
-
-  j->makeSound();
-
+	Animal *j = new Cat;
+	j->makeSound();
+	delete j;
 
 /*
-  Animal j;
+  	Animal j;
 
-  j.makeSound();
+ 	j.makeSound();
+
 */
-
 
 }

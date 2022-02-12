@@ -1,18 +1,26 @@
 #include "Form.hpp"
 
-Form::Form(): Name("noneF") ,Signed(false), Grade_to_sign(1), Grade_to_exec(1)
+Form::Form(): Name("noneF") ,Signed(false), Grade_to_sign(150), Grade_to_exec(150)
 {
   std::cout << "Form default constructor called!\n";
 }
 
 Form::Form(std::string n, int gs, int ge): Name(n), Signed(false), Grade_to_sign(gs), Grade_to_exec(ge)
 {
-  std::cout << "Form constructor called with values " << n << " and " << gs << " and " << ge << "\n";
+	std::cout << "Form constructor called with values " << n << " and " << gs << " and " << ge << "\n";
+	if (this->Grade_to_sign > 150 || this->Grade_to_exec > 150)
+		throw Form::GradeTooLowException();
+	else if (this->Grade_to_sign < 1 || this->Grade_to_exec < 1)
+		throw Form::GradeTooHighException();
 }
 
 Form::Form(const Form &c): Name(c.Name), Signed(false), Grade_to_sign(c.Grade_to_sign), Grade_to_exec(c.Grade_to_exec)
 {
-  std::cout << "Form copy constructor called!\n";
+	std::cout << "Form copy constructor called!\n";
+	if (this->Grade_to_sign > 150 || this->Grade_to_exec > 150)
+		throw Form::GradeTooLowException();
+	else if (this->Grade_to_sign < 1 || this->Grade_to_exec < 1)
+		throw Form::GradeTooHighException();
 }
 
 Form &Form::operator=(const Form &c)
@@ -64,7 +72,7 @@ const char * Form::GradeTooLowException::what () const throw ()
 
 void Form::beSigned(Bureaucrat &s)
 {
-  if (s.getGrade() < this->Grade_to_sign)
+  if (s.getGrade() <= this->Grade_to_sign)
     this->Signed = true;
   else
     throw Form::GradeTooLowException();

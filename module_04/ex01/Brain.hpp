@@ -10,7 +10,6 @@ public:
   Brain(const Brain &c);
   Brain &operator=(const Brain &c);
   ~Brain();
-
 };
 
 

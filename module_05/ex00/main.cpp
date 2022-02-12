@@ -12,14 +12,13 @@ int main()
 	{
 		std::cerr << e1.what() << '\n';
 	}
-
-	std::cout << "-------test 2: the grade gets too low ------" << std::endl;
+	std::cout << "-------test 2: the grade gets too high ------" << std::endl;
 	try
 	{
 		Bureaucrat b("b1", 1);
 		std::cout << b << std::endl;
 		std::cout << "-----------------" << std::endl;
-		b.dec();
+		b.inc();
 		std::cout << b << std::endl;
 		std::cout << "-----------------" << std::endl;
 
@@ -28,13 +27,13 @@ int main()
 	{
 		std::cerr << e1.what() << '\n';
 	}
-	std::cout << "-------test 3: the grade gets too high ------" << std::endl;
+	std::cout << "-------test 3: the grade gets too low ------" << std::endl;
 	try
 	{
 		Bureaucrat b("b1", 150);
 		std::cout << b << std::endl;
 		std::cout << "-----------------" << std::endl;
-		b.inc();
+		b.dec();
 		std::cout << b << std::endl;
 		std::cout << "-----------------" << std::endl;
 	}

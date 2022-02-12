@@ -6,7 +6,6 @@
 #include <cmath>
 
 class Fixed {
-
 private:
   int fpv;
   static const int fb;

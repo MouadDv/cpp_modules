@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: milmi <milmi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: milmi <milmi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 09:56:54 by milmi             #+#    #+#             */
-/*   Updated: 2021/12/21 10:49:40 by milmi            ###   ########.fr       */
+/*   Updated: 2021/12/23 23:13:59 by milmi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@ Zombie* zombieHorde( int N, std::string name )
 	if (!ret)
 		return (NULL);
 	for (int i = 0; i < N; i++)
-	{
 		ret[i].setName(name);
-		ret[i].announce();
-	}
 	return (ret);
 }

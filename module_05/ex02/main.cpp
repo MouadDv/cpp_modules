@@ -9,7 +9,7 @@ int main()
 	std::cout << "-------test 1: ------" << std::endl;
 	try
 	{
-		Bureaucrat b("b1",137);
+		Bureaucrat b("b1",13);
 		std::cout << b << std::endl;
 		ShrubberyCreationForm s("home");
 		s.beSigned(b);

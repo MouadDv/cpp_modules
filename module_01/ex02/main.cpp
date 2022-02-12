@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: milmi <milmi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: milmi <milmi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 11:06:35 by milmi             #+#    #+#             */
-/*   Updated: 2021/12/21 15:50:20 by milmi            ###   ########.fr       */
+/*   Updated: 2021/12/23 23:09:48 by milmi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main( void )
 	std::cout << "Address of stringREF:               " << &stringREF << std::endl;
 
 	std::cout << "--------------------------------------------------------" << std::endl;
-	std::cout << string << std::endl;
 	std::cout << *stringPTR << std::endl;
 	std::cout << stringREF << std::endl;
 }

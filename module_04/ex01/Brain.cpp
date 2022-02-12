@@ -3,6 +3,9 @@
 Brain::Brain()
 {
   std::cout << "Brain default constructor called!\n";
+  for (int i = 0; i < 100; i++){
+    this->ideas[i] = "Idea";
+  }
 }
 
 Brain::Brain(const Brain &c)

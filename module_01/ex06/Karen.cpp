@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Karen.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: milmi <milmi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: milmi <milmi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 06:28:38 by milmi             #+#    #+#             */
-/*   Updated: 2021/12/23 18:59:37 by milmi            ###   ########.fr       */
+/*   Updated: 2021/12/23 23:33:19 by milmi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,28 +34,35 @@ void Karen::error( void )
 
 void Karen::complain( std::string level )
 {
-	std::string comp[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	size_t	pos = 0;
-	int		found = 0;
-	std::map<std::string,void (Karen::*) (void)> mymap;
-  	std::map<std::string,void (Karen::*) (void)>::iterator it;
-	  
-	mymap["DEBUG"] = &Karen::debug;
-	mymap["INFO"] = &Karen::info;
-	mymap["WARNING"] = &Karen::warning;
-	mymap["ERROR"] = &Karen::error;
+	std::string tab[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void	(Karen::*ptr[4])(void);
+	int			pos = 0;
+	
+	ptr[0] = &Karen::debug;
+	ptr[1] = &Karen::info;
+	ptr[2] = &Karen::warning;
+	ptr[3] = &Karen::error;
 	
 	while (pos < 4)
 	{
-		if (comp[pos] == level || found == 1)
-		{
-			found = 1;
-			it = mymap.find(comp[pos]);
-			if (it != mymap.end())
-				(this->*(it->second))();
-		}
+		if (level == tab[pos])
+			break ;
 		pos++;
 	}
-	if (!found)
-		std::cout << "[ Probably complaining about insignificant problems ]\n";
+	
+	switch (pos)
+	{
+		case 0:
+			(this->*(ptr[0]))();
+		case 1:
+			(this->*(ptr[1]))();
+		case 2:
+			(this->*(ptr[2]))();
+		case 3:
+			(this->*(ptr[3]))();
+			break ;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]\n";
+			break;
+	}
 }
