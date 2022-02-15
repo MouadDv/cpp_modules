@@ -6,17 +6,17 @@
 #    By: milmi <milmi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/10 00:43:14 by milmi             #+#    #+#              #
-#    Updated: 2022/02/11 20:25:26 by milmi            ###   ########.fr        #
+#    Updated: 2022/02/14 17:20:37 by milmi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = scalar
+NAME = convert
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-CP = clang++
+CP = c++
 
-SRC = main.cpp
+SRC = main.cpp Convert.cpp
 
 HEADER = 
 

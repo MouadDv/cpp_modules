@@ -2,7 +2,7 @@
 
 Base * generate(void)
 {
-	Base *ret;
+	Base *ret = nullptr;
 	srand(time(0));
 	int ran = rand();
 

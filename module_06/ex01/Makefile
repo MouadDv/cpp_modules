@@ -6,7 +6,7 @@
 #    By: milmi <milmi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/10 00:43:14 by milmi             #+#    #+#              #
-#    Updated: 2022/02/12 13:16:30 by milmi            ###   ########.fr        #
+#    Updated: 2022/02/14 17:20:31 by milmi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = Serialization
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-CP = clang++
+CP = c++
 
 SRC = Serialization.cpp main.cpp
 
