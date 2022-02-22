@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: milmi <milmi@student.1337.ma>              +#+  +:+       +#+         #
+#    By: milmi <milmi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/10 00:43:14 by milmi             #+#    #+#              #
-#    Updated: 2021/12/23 18:12:41 by milmi            ###   ########.fr        #
+#    Updated: 2022/02/16 16:28:24 by milmi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 CP = clang++
 
-SRC = main.cpp
+SRC = aw.cpp
 
 HEADER = Functions.hpp
 

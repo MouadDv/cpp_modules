@@ -30,7 +30,7 @@ int main()
 			g1.push_back(i);
 		try
 		{
-			it = easyfind(g1, 10);
+			it = easyfind(g1, 1);
 			std::cout << "Found!\n";
 			std::cout << *it << "\n";
 		}
